@@ -1,0 +1,6 @@
+0 = CPU
+1 = GPU
+2 = RAM
+3 = Storage/NAND
+4 = Motherboard
+5 = Other
