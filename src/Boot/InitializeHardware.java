@@ -9,6 +9,26 @@ public class InitializeHardware {
     /*
     Start hardware services here after validating them
      */
-    EnsureValidateHardware hardwareVerifier = new EnsureValidateHardware();
+    private EnsureValidateHardware hardwareVerifier = new EnsureValidateHardware();
+
+    public void initializeCpu(){
+        hardwareVerifier.checkCPU();
+    }
+
+    public void initializeGpu(){
+        hardwareVerifier.checkGPU();
+    }
+
+    public void initializeNand(){
+        hardwareVerifier.checkNand();
+    }
+
+    public void initilizeRam(){
+        hardwareVerifier.checkRAM();
+    }
+
+    public void initilizeMotherboard(){
+        hardwareVerifier.checkMotherboard();
+    }
 
 }
