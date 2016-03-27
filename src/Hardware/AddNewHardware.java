@@ -64,35 +64,39 @@ public class AddNewHardware {
     public static void readHardwareDatabase(){
         try {
             BufferedReader reader = new BufferedReader(new FileReader("hardware"));
-            String line = reader.readLine();
-            if (line != null){
-                for (int i = 0; i < line.length(); i++){
-                    if (line.charAt(i) == ':'){
-                        switch (line.substring(0, i - 1)){
-                            case ("cpu"):
-                                hardwareMap.put(0, line.substring(i + 1));
-                                break;
-                            case ("gpu"):
-                                hardwareMap.put(1, line.substring(i + 1));
-                                break;
-                            case ("memory"):
-                                hardwareMap.put(2, line.substring(i + 1));
-                                break;
-                            case ("storage"):
-                                hardwareMap.put(3, line.substring(i + 1));
-                                break;
-                            case ("motherboard"):
-                                hardwareMap.put(4, line.substring(i + 1));
-                                break;
-                            case ("other"):
-                                hardwareMap.put(5, line.substring(i + 1));
-                                break;
+            while (true) {
+                String line = reader.readLine();
+                if (line != null) {
+                    for (int i = 0; i < line.length(); i++) {
+                        if (line.charAt(i) == ':') {
+                            switch (line.substring(0, i - 1)) {
+                                case ("cpu"):
+                                    hardwareMap.put(0, line.substring(i + 1));
+                                    break;
+                                case ("gpu"):
+                                    hardwareMap.put(1, line.substring(i + 1));
+                                    break;
+                                case ("memory"):
+                                    hardwareMap.put(2, line.substring(i + 1));
+                                    break;
+                                case ("storage"):
+                                    hardwareMap.put(3, line.substring(i + 1));
+                                    break;
+                                case ("motherboard"):
+                                    hardwareMap.put(4, line.substring(i + 1));
+                                    break;
+                                case ("other"):
+                                    hardwareMap.put(5, line.substring(i + 1));
+                                    break;
+                            }
                         }
                     }
                 }
+                else break;
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
