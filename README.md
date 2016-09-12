@@ -3,4 +3,6 @@ A bootloader for verifying and starting hardware and software.  It is generic, c
 
 #THIS IS A WORK IN PROGRESS AND NOT READY FOR USE
 
+* Currently only works for unix based systems
+
 Feel free to contribute

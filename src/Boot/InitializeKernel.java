@@ -6,10 +6,10 @@ import java.io.FileReader;
 /**
  * Created by matthewelbing on 3/24/16.
  */
-public class InitializeKernel {
+public class InitializeKernel { //Dies ist fertig, für jetzt beim geringste
     public void startKernelAndDependencies(){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("kernelData"));]
+            BufferedReader reader = new BufferedReader(new FileReader("kernelData"));
             while (true) {
                 String line = reader.readLine();
                 for (int i = 0; i < line.length(); i++) {
