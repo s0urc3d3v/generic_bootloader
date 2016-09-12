@@ -98,5 +98,4 @@ public class AddNewHardware {
                 e.printStackTrace();
             }
         }
-    }
 }

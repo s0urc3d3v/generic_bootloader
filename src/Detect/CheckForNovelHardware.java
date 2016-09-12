@@ -6,7 +6,7 @@ import java.io.*;
  * Created by matthewelbing on 3/24/16.
  */
 public class CheckForNovelHardware { //Dies ist nicht fertig.  Dies ist macht f체r sp채ter Zeit.
-    //Dies ist f체r die GPU
+    //Dies ist f체r die GPU starten
     public boolean isGpuPresent(String GPU_id) {
         return GPU_id != null;
     }
@@ -35,6 +35,30 @@ public class CheckForNovelHardware { //Dies ist nicht fertig.  Dies ist macht f�
             e.printStackTrace();
         }
         return card_id;
+    }
+
+    //Dies ist f체r die CPU starten
+    public boolean isCpuPresent(String CPU_id){
+        return (getCpuInfo() != null  && getCpuInfo().equals(""));
+    }
+
+    public String getCpuInfo(){
+        String cpu_data = "";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("/proc/cpuinfo"));
+
+            String line = "";
+            while (true){
+                line = reader.readLine();
+                if (line != null) cpu_data += line;
+                else break;
+            }
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return cpu_data;
     }
 
 }
