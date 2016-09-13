@@ -39,7 +39,7 @@ public class CheckForNovelHardware { //Dies ist nicht fertig.  Dies ist macht f√
 
     //Dies ist f√ºr die CPU starten
     public boolean isCpuPresent(String CPU_id){
-        return (getCpuInfo() != null  && getCpuInfo().equals(""));
+        return (getCpuInfo() != null  && !(getCpuInfo().equals("")));
     }
 
     public String getCpuInfo(){
@@ -59,6 +59,28 @@ public class CheckForNovelHardware { //Dies ist nicht fertig.  Dies ist macht f√
             e.printStackTrace();
         }
         return cpu_data;
+    }
+    public boolean isMemoryPresent(){
+        return (getMemory() != null || !(getMemory().equals("")));
+    }
+
+    public String getMemory(){
+        String memoryData = "";
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("/proc/meminfo"));
+
+            String line = "";
+            while (true){
+                line = reader.readLine();
+                if (line != null) memoryData += line;
+                else break;
+            }
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return memoryData;
     }
 
 }
