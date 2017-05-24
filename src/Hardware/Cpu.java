@@ -22,4 +22,16 @@ public class Cpu {
                 ", coreEnumeration=" + coreEnumeration +
                 '}';
     }
+
+    public String getProccessorName() {
+        return proccessorName;
+    }
+
+    public String getProccesorArch() {
+        return proccesorArch;
+    }
+
+    public int getCoreEnumeration() {
+        return coreEnumeration;
+    }
 }

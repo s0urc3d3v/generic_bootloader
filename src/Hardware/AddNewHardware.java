@@ -63,7 +63,7 @@ public class AddNewHardware {
      */
     public static void readHardwareDatabase(){
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("hardware"));
+            BufferedReader reader = new BufferedReader(new FileReader("hardware")); // hardware müsst hardware haben
             while (true) {
                 String line = reader.readLine();
                 if (line != null) {
